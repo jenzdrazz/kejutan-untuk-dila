@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Kamu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2em;
+      color: #d63384;
+      margin-bottom: 0.2em;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #555;
+      max-width: 500px;
+      margin-bottom: 2em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    button {
+      background-color: #ff6fb0;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #ff8cc2;
+      transform: scale(1.05);
+    }
+
+    #lirik, #galeri {
+      display: none;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    #lirik p {
+      white-space: pre-line;
+      color: #333;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    img {
+      width: 260px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #c2185b;
+      font-size: 2em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>haloo dedee!</h1>
+  <p>kakaa udah siapin kejutan kecil dari hati buat kamu. klik tombolnya yaa.</p>
+  <button onclick="tampilkanKejutan()">Lihat Kejutannya</button>
+
+  <!-- Audio tersembunyi dan loop -->
+  <audio id="lagu" preload="auto" loop style="display: none;">
+    <source src="https://media.vocaroo.com/mp3/1niDe7uUQJNu" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+  </audio>
+
+  <div id="lirik">
+    <h2>Lirik Spesial</h2>
+    <p>
+sent to me from heaven💐  
+"Dilaa" cinnamon  
+your my worldd🌏  
+    </p>
+  </div>
+
+  <div id="galeri">
+    <h2>My Worldd🌏</h2>
+    <img src="https://i.imgur.com/qBVJEaT.jpeg" alt="Foto My Worldd" />
+  </div>
+
+  <script>
+    function tampilkanKejutan() {
+      document.getElementById('lirik').style.display = 'block';
+      document.getElementById('galeri').style.display = 'block';
+      const audio = document.getElementById('lagu');
+      audio.play().catch(e => console.log("Audio error:", e));
+    }
+  </script>
+
+</body>
+</html>
